@@ -4,7 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { CityData } from '../models/city-data.model';
-import {CurrentWeather} from '../models/current-weather.model';
 
 
 @Injectable({
@@ -58,5 +57,8 @@ export class FavoritesService {
   }
   changeHomeMode() {
     this.homeMode = !this.homeMode;
+  }
+  fetchFavorites() {
+    return this.favorites;
   }
 }

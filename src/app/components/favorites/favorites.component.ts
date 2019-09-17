@@ -13,7 +13,7 @@ export class FavoritesComponent implements OnInit {
   favorites: Array<any>;
 
   constructor(private router: Router, private favoritesService: FavoritesService, private weatherService: WeatherService) {
-    this.favorites = favoritesService.favorites;
+    this.favorites = [];
   }
   setCurrentCityId(id: string, name: string) {
     this.weatherService.setCurrentCity({id, name});
@@ -22,6 +22,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.favorites = this.favoritesService.fetchFavorites();
   }
 
 }
