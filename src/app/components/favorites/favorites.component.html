@@ -1,0 +1,4 @@
+<div class="fav-container" *ngIf="favorites">
+  <app-condition-card class="city-card" (click)="setCurrentCityId(city.cityData.id, city.cityData.name)" *ngFor="let city of favorites;" [inFavCity]="city" ></app-condition-card>
+</div>
+

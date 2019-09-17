@@ -1,0 +1,12 @@
+<div class="card">
+  <h4>{{inDay ? (inDay.Date | date:'EEEE') : inFavCity.cityData.name}}</h4>
+  <span *ngIf="inDay; else elseSpan">{{inDay.Temperature.Maximum.Value}}°C / {{inDay.Temperature.Minimum.Value}}°C</span>
+  <ng-template #elseSpan>
+    <span>{{inFavCity.currentWeather[0].Temperature.Metric.Value}}°C</span>
+  </ng-template>
+  <h5>{{inDay ? inDay.Day.IconPhrase : inFavCity.currentWeather[0].WeatherText}}</h5>
+  <img class="img" *ngIf="inDay else elseImg" [src]=findIcon(inDay.Day.Icon) [alt]=inDay.Day.IconPhrase>
+  <ng-template #elseImg>
+    <img class="img" [src]=findIcon(inFavCity.currentWeather[0].WeatherIcon) [alt]=inFavCity.currentWeather[0].WeatherText>
+  </ng-template>
+</div>

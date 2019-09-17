@@ -1,0 +1,8 @@
+<label>
+  <i class="fa fa-search" aria-hidden="true"></i>
+  <input type="text" class="search" [placeholder]=placeholder list="cities" name="search" (input)="consoleLog($event.target.value)" (change)="getCurrentCity($event.target.value)" [(ngModel)]="search"/>
+  <datalist id="cities">
+    <option *ngFor="let city of cities" [value]="city.LocalizedName" [id]="city.Key">{{city.Country.LocalizedName}}</option>
+  </datalist>
+</label>
+

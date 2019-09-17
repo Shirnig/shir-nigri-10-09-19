@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="header">
+    <div class="currentBox" *ngIf="weatherService.currentWeather.length">
+      <img class="img" [src]=findIcon(weatherService.currentWeather[0].WeatherIcon) alt="weatherService.currentWeather[0].WeatherText"/>
+      <div class="text">
+        <span class="name">{{weatherService.currentCityData.name}}</span>
+        <br/>
+        <span>{{weatherService.currentWeather[0].Temperature.Metric.Value}}°C</span>
+      </div>
+    </div>
+    <button type="button" class="btn btn-light" (click)="handleFavorite()">{{favoritesService.checkIfAdded(weatherService.currentCityData.id) ? 'Remove From Favorites' : 'Add To Favorites'}}</button>
+  </div>
+  <div class="forecastBox col-12" *ngIf="weatherService.forecastWeather.DailyForecasts">
+    <app-condition-card class="col-xs-10 col-lg-2" *ngFor="let day of weatherService.forecastWeather.DailyForecasts" [inDay]="day"></app-condition-card>
+  </div>
+</div>

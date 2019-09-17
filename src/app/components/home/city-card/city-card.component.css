@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+
+.container {
+  background-color: #71a2ea;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+.header {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentBox {
+  display: flex;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .forecastBox {
+    padding:0 3.5rem;
+  }
+
+  .container{
+    margin-top: 1vh;
+  }
+
+  .btn{
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .forecastBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container{
+    height: 62vh;
+  }
+}
+
+
+.btn {
+  color: dodgerblue;
+}
+
+.name {
+  white-space:nowrap;
+}
+
+/*.btn:hover, .btn:active, .btn:focus {*/
+/*  background-color: #FFD400 !important;*/
+/*  color: white !important;*/
+/*}*/
+

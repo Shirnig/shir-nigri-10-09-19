@@ -1,0 +1,15 @@
+.fav-container {
+  display: flex;
+}
+
+.city-card {
+  width: 14%;
+  padding:15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .city-card {
+    width: 50%;
+  }
+}

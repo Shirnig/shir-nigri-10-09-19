@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One&display=swap');
+
+* {
+  font-family: 'Francois One', sans-serif;
+  color: #ffffff;
+}
+
+.navbar {
+  height: 7vh;
+  background-color: #71a2ea;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+
+
+
+
+
+
+
