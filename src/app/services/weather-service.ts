@@ -27,12 +27,12 @@ export class WeatherService {
 
   getCities(search: string) {
     // tslint:disable-next-line:max-line-length
-    return this.http.get(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf&q=${search}`);
+    return this.http.get(`//dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf&q=${search}`);
   }
 
   getCurrentWeather(): Observable<any> {
     // tslint:disable-next-line:max-line-length
-    return this.http.get(`http://dataservice.accuweather.com/currentconditions/v1/${this.currentCityData.id}?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf`).subscribe((data) => {
+    return this.http.get(`//dataservice.accuweather.com/currentconditions/v1/${this.currentCityData.id}?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf`).subscribe((data) => {
       this.currentWeather = data;
     }, err => this.toastr.error(`${err.name}`));
   }
@@ -40,7 +40,7 @@ export class WeatherService {
 
   get5DaysWeather(): Observable<any> {
     // tslint:disable-next-line:max-line-length
-    return this.http.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${this.currentCityData.id}?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf&metric=true`).subscribe((data) => {
+    return this.http.get(`//dataservice.accuweather.com/forecasts/v1/daily/5day/${this.currentCityData.id}?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf&metric=true`).subscribe((data) => {
       this.forecastWeather = data;
     }, err => this.toastr.error(`${err.name}`));
   }
